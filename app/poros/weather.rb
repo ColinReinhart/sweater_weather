@@ -9,7 +9,9 @@ class Weather
               :uvi,
               :visibility,
               :conditions,
-              :icon
+              :icon,
+              :hourly_weather,
+              :daily_weather
 
   def initialize(attributes)
     @id = nil
@@ -23,10 +25,24 @@ class Weather
     @visibility = attributes[:current][:visibility]
     @conditions = attributes[:current][:weather].first[:description]
     @icon = attributes[:current][:weather].first[:icon]
+    @hourly_weather = format_hourly(attributes[:hourly][0..7])
+    @daily_weather = format_daily(attributes[:daily][0..4])
   end
 
   def date_format(utc)
     date = Time.zone.at(utc).strftime('%b %e, %l:%M %p')
+  end
+
+  def format_hourly(data)
+    data.map do |hour|
+      HourlyWeather.new(hour)
+    end
+  end
+
+  def format_daily(data)
+    data.map do |day|
+      DailyWeather.new(day)
+    end
   end
 
 end
