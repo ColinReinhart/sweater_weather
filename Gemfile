@@ -6,6 +6,7 @@ ruby "2.7.4"
 gem 'faraday'
 gem 'figaro'
 gem 'jsonapi-serializer'
+gem 'json'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
@@ -58,6 +59,5 @@ group :development do
 end
 
 group :test do
-  gem 'webmock'
   gem 'vcr'
 end
