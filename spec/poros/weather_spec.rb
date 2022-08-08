@@ -6,9 +6,9 @@ RSpec.describe Weather do
     lon = "-105.0152"
 
     weather = WeatherFacade.get_weather(lat, lon)
-    expect(weather.date).to be_a(String)
-    expect(weather.sunrise).to be_a(String)
-    expect(weather.sunset).to be_a(String)
+    require "pry"; binding.pry
+    expect(weather.current_weather).to be_a(CurrentWeather)
+
     expect(weather.hourly_weather).to be_a(Array)
     expect(weather.hourly_weather.count).to eq(8)
     expect(weather.daily_weather).to be_a(Array)
