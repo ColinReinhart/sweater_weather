@@ -1,5 +1,6 @@
 class Weather
   attr_reader :id,
+              :type,
               :date,
               :sunrise,
               :sunset,
@@ -15,6 +16,7 @@ class Weather
 
   def initialize(attributes)
     @id = nil
+    @type = "forecast"
     @date = date_format(attributes[:current][:dt])
     @sunrise = date_format(attributes[:current][:sunrise])
     @sunset = date_format(attributes[:current][:sunset])
