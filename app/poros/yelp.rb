@@ -5,5 +5,6 @@ attr_reader :name,
   def initialize(argument)
     @name = argument[:businesses].first[:name]
     @address = argument[:businesses].first[:location][:display_address]
+    require "pry"; binding.pry
   end
 end

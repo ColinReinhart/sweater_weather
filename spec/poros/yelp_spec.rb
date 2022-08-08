@@ -7,10 +7,8 @@ RSpec.describe Yelp do
     search = "chinese"
 
     restaurant = YelpFacade.find_place(lat, lon, search)
-    require "pry"; binding.pry
     expect(restaurant).to be_a(Yelp)
     expect(restaurant.name).to be_a(String)
-    expect(restaurant.address).to be_a(String)
-    expect(restaurant.name).to eq("Star Kitchen")
+    expect(restaurant.address).to be_a(Array)
   end
 end
