@@ -6,7 +6,8 @@ RSpec.describe Yelp do
     lon = "-105.0152"
     search = "chinese"
 
-    restaurant = YelpFacade.find_place(lat, lon, search)
-    expect(restaurant).to be_a(Hash)
+    place = YelpFacade.find_place(lat, lon, search)
+    expect(place).to be_a(Hash)
+    require "pry"; binding.pry
   end
 end

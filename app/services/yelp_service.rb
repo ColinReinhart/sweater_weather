@@ -5,7 +5,7 @@ class YelpService < BaseService
       f.params['latitude'] = lat
       f.params['longitude'] = lon
       f.params['categories'] = search
-      f.headers['bearer'] = ENV['yelp_api']
+      f.headers['Authorization'] = "Bearer #{ENV['yelp_api']}"
     end
     response = conn.get('v3/businesses/search')
     get_json(response)
