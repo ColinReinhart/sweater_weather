@@ -1,38 +1,21 @@
 class Weather
   attr_reader :id,
               :type,
-              :date,
-              :sunrise,
-              :sunset,
-              :temperature,
-              :feels_like,
-              :humidity,
-              :uvi,
-              :visibility,
-              :conditions,
-              :icon,
+              :current_weather,
               :hourly_weather,
               :daily_weather
+
 
   def initialize(attributes)
     @id = nil
     @type = "forecast"
-    @date = date_format(attributes[:current][:dt])
-    @sunrise = date_format(attributes[:current][:sunrise])
-    @sunset = date_format(attributes[:current][:sunset])
-    @temperature = attributes[:current][:temp]
-    @feels_like = attributes[:current][:feels_like]
-    @humidity = attributes[:current][:humidity]
-    @uvi = attributes[:current][:uvi]
-    @visibility = attributes[:current][:visibility]
-    @conditions = attributes[:current][:weather].first[:description]
-    @icon = attributes[:current][:weather].first[:icon]
+    @current_weather = current(attributes)
     @hourly_weather = format_hourly(attributes[:hourly][0..7])
     @daily_weather = format_daily(attributes[:daily][0..4])
   end
 
-  def date_format(utc)
-    date = Time.zone.at(utc).strftime('%b %e, %l:%M %p')
+  def current(data)
+    CurrentWeather.new(data)
   end
 
   def format_hourly(data)

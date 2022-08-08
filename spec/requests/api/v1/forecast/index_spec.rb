@@ -14,17 +14,7 @@ RSpec.describe "Forecast request" do
 
     attr = result[:data][:attributes]
 
-    expect(attr).to have_key(:id)
-    expect(attr).to have_key(:type)
-    expect(attr).to have_key(:sunrise)
-    expect(attr).to have_key(:sunset)
-    expect(attr).to have_key(:temperature)
-    expect(attr).to have_key(:feels_like)
-    expect(attr).to have_key(:humidity)
-    expect(attr).to have_key(:uvi)
-    expect(attr).to have_key(:visibility)
-    expect(attr).to have_key(:conditions)
-    expect(attr).to have_key(:icon)
+    expect(attr).to have_key(:current_weather)
     expect(attr).to have_key(:hourly_weather)
     expect(attr).to have_key(:daily_weather)
   end
