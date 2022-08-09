@@ -75,5 +75,17 @@ RSpec.describe "Registration request" do
 
       expect(response.status).to eq 401
     end
+
+    it "cannot register the same email twice" do
+      new_user = {
+        email: "whatever@example.com",
+        password: "password",
+        password_confirmation: "password"
+      }
+      post '/api/v1/users', params: new_user
+      post '/api/v1/users', params: new_user
+
+      expect(response.status).to eq 401
+    end
   end
 end
