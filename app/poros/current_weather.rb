@@ -11,9 +11,9 @@ class CurrentWeather
               :icon
 
     def initialize(attributes)
-      @date = date_format(attributes[:current][:dt])
-      @sunrise = date_format(attributes[:current][:sunrise])
-      @sunset = date_format(attributes[:current][:sunset])
+      @date = date_format((attributes[:current][:dt]) - attributes[:timezone_offset])
+      @sunrise = date_format((attributes[:current][:sunrise])- attributes[:timezone_offset])
+      @sunset = date_format((attributes[:current][:sunset])- attributes[:timezone_offset])
       @temperature = attributes[:current][:temp]
       @feels_like = attributes[:current][:feels_like]
       @humidity = attributes[:current][:humidity]
