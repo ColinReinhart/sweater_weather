@@ -7,8 +7,6 @@ class Api::V1::UsersController < ApplicationController
     if user_create.save
       # session[:id] = user_create[:id]
       render json: UserSerializer.new(user_create), status: 201
-    else
-      render json: [errors: 'invalid credentials'], status: 401
     end
   end
 
