@@ -53,5 +53,27 @@ RSpec.describe "Registration request" do
 
       expect(response.status).to eq 401
     end
+
+    it "requires a password" do
+      new_user = {
+        email: "email@email.com",
+        password: "",
+        password_confirmation: "password"
+      }
+      post '/api/v1/users', params: new_user
+
+      expect(response.status).to eq 401
+    end
+
+    it "requires a password confirmation" do
+      new_user = {
+        email: "email@email.com",
+        password: "password",
+        password_confirmation: ""
+      }
+      post '/api/v1/users', params: new_user
+
+      expect(response.status).to eq 401
+    end
   end
 end

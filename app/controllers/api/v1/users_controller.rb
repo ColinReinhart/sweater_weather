@@ -24,7 +24,7 @@ class Api::V1::UsersController < ApplicationController
         render json: { error: "Password Required To Register"}, status: 401
       elsif user_params[:password_confirmation] == ""
         render json: { error: "Password Confirmation Required To Register"}, status: 401
-      elseif user_params[:password] != user_params[:password_confirmation]
+      elsif user_params[:password] != user_params[:password_confirmation]
         render json: { error: "Password Does Not Match Confirmation"}, status: 401
       end
   end
