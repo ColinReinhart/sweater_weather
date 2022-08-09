@@ -9,6 +9,8 @@ class Api::V1::RoadTripController < ApplicationController
       destination = LocationFacade.get_location(to)
       weather = WeatherFacade.get_weather(destination.lat, destination.lon)
       render json: RoadTripSerializer.create_road_trip(directions, start, destination, weather)
+    else
+      render json: { error: "Unauhtorized"}, status: 401
     end
   end
 
