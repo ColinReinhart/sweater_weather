@@ -6,7 +6,6 @@ RSpec.describe Weather do
     lon = "-105.0152"
 
     weather = WeatherFacade.get_weather(lat, lon)
-    require "pry"; binding.pry
     expect(weather.current_weather).to be_a(CurrentWeather)
 
     expect(weather.hourly_weather).to be_a(Array)

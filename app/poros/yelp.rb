@@ -1,13 +1,13 @@
 class Yelp
 attr_reader :id,
-            :type,
             :name,
-            :address
+            :address,
+            :city
 
   def initialize(argument)
     @id = nil
-    @type = 'munchie'
     @name = argument[:businesses].first[:name]
     @address = argument[:businesses].first[:location][:display_address]
+    @city = argument[:businesses].first[:location][:city]
   end
 end

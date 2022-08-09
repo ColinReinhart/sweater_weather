@@ -8,13 +8,28 @@ RSpec.describe "Munchies index" do
 
     result = JSON.parse(response.body, symbolize_names: true)
 
-    expect(result[:data]).to have_key(:id)
-    expect(result[:data]).to have_key(:type)
-    expect(result[:data]).to have_key(:attributes)
+    expect(result).to have_key(:data)
 
-    attr = result[:data][:attributes]
+    data = result[:data]
 
-    expect(attr).to have_key(:name)
-    expect(attr).to have_key(:address)
+    expect(data).to have_key(:id)
+    expect(data).to have_key(:type)
+    expect(data).to have_key(:attributes)
+
+    attr = data[:attributes]
+
+    expect(attr).to have_key(:destination_city)
+    expect(attr).to have_key(:forecast)
+    expect(attr).to have_key(:restaurant)
+
+    forecast = attr[:forecast]
+
+    expect(forecast).to have_key(:summary)
+    expect(forecast).to have_key(:temperature)
+
+    rest = attr[:restaurant]
+
+    expect(rest).to have_key(:name)
+    expect(rest).to have_key(:address)
   end
 end
