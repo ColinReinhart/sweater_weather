@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe "Registration request" do
   describe "happy path" do
     it "registers a new user and creates a unique AP for them" do
+      expect(User.all.count).to eq(0)
       new_user = {
         email: "whatever@example.com",
         password: "password",
         password_confirmation: "password"
       }
       post '/api/v1/users', params: new_user
-      require "pry"; binding.pry
       expect(response).to be_successful
 
       response_body = JSON.parse(response.body, symbolize_names: true)
@@ -27,6 +27,7 @@ RSpec.describe "Registration request" do
 
       expect(attr).to have_key(:email)
       expect(attr).to have_key(:api_key)
+      expect(User.all.count).to eq(1)
     end
   end
 
