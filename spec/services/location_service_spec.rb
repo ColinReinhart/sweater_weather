@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe LocationService do
-  it "can find lat/lon from city and state" do
+  it "can find lat/lon from city and state", :vcr do
     search = "denver, co"
 
     location = LocationService.find_lat_lon(search)

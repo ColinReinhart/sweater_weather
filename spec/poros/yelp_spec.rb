@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Yelp do
-  it "creates a yelp poro" do
+  it "creates a yelp poro", :vcr do
     lat = "39.6937"
     lon = "-105.0152"
     search = "chinese"

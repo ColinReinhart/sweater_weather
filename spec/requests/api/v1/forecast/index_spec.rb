@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Forecast request" do
-  it "gets forcast for location in desired output" do
+  it "gets forcast for location in desired output", :vcr do
     search = "denver, co"
 
     get "/api/v1/forecast?location=denver,co"

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Location do
-  it "creates a location poro" do
+  it "creates a location poro", :vcr do
     search = 'denver, co'
 
     location = LocationFacade.get_location(search)
