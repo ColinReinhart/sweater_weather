@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Roadtrip request" do
   describe "happy path" do
-    it "can fidn the weather of a location at time of arrival" do
+    it "can fidn the weather of a location at time of arrival", :vcr do
       new_user = {
         email: "whatever@example.com",
         password: "password",
@@ -40,7 +40,7 @@ RSpec.describe "Roadtrip request" do
       expect(waeta).to have_key(:conditions)
     end
 
-    it "can fine weather days away" do
+    it "can fine weather days away", :vcr do
       new_user = {
         email: "whatever@example.com",
         password: "password",
@@ -60,7 +60,7 @@ RSpec.describe "Roadtrip request" do
   end
 
   describe "sad path" do
-    it "will not return weather is route is impossible" do
+    it "will not return weather is route is impossible", :vcr do
       new_user = {
         email: "whatever@example.com",
         password: "password",
