@@ -60,123 +60,123 @@ Default host is `http://localhost:3000`
 - Example Response
   - Returns 5 days and 8 hours of weather data
   ```ruby
-  {
-    "data": {
-        "id": null,
-        "type": "forecast",
-        "attributes": {
-            "current_weather": {
-                "date": "Jun 21,  1:18 AM",
-                "sunrise": "Jun 20,  5:31 PM",
-                "sunset": "Jun 21,  8:31 AM",
-                "temperature": 83.14,
-                "feels_like": 80.87,
-                "humidity": 24,
-                "uvi": 10.42,
-                "visibility": 10000,
-                "conditions": "overcast clouds",
-                "icon": "04d"
-            },
-            "hourly_weather": [
-                {
-                    "time": "Jun 20,  7:00 PM",
-                    "temp": 83.14,
+      {
+        "data": {
+            "id": null,
+            "type": "forecast",
+            "attributes": {
+                "current_weather": {
+                    "date": "Jun 21,  1:18 AM",
+                    "sunrise": "Jun 20,  5:31 PM",
+                    "sunset": "Jun 21,  8:31 AM",
+                    "temperature": 83.14,
+                    "feels_like": 80.87,
+                    "humidity": 24,
+                    "uvi": 10.42,
+                    "visibility": 10000,
                     "conditions": "overcast clouds",
                     "icon": "04d"
                 },
-                {
-                    "time": "Jun 20,  8:00 PM",
-                    "temp": 83.75,
-                    "conditions": "overcast clouds",
-                    "icon": "04d"
-                },
-                {
-                    "time": "Jun 20,  9:00 PM",
-                    "temp": 84.79,
-                    "conditions": "broken clouds",
-                    "icon": "04d"
-                },
-                {
-                    "time": "Jun 20, 10:00 PM",
-                    "temp": 84.83,
-                    "conditions": "broken clouds",
-                    "icon": "04d"
-                },
-                {
-                    "time": "Jun 20, 11:00 PM",
-                    "temp": 84.33,
-                    "conditions": "broken clouds",
-                    "icon": "04d"
-                },
-                {
-                    "time": "Jun 21, 12:00 AM",
-                    "temp": 83.08,
-                    "conditions": "broken clouds",
-                    "icon": "04d"
-                },
-                {
-                    "time": "Jun 21,  1:00 AM",
-                    "temp": 81.14,
-                    "conditions": "clear sky",
-                    "icon": "01d"
-                },
-                {
-                    "time": "Jun 21,  2:00 AM",
-                    "temp": 77.95,
-                    "conditions": "clear sky",
-                    "icon": "01d"
-                }
-            ],
-            "daily_weather": [
-                {
-                    "date": "Jun 20,  7:00 PM",
-                    "sunrise": "Jun 20, 11:31 AM",
-                    "sunset": "Jun 21,  2:31 AM",
-                    "max_temp": 84.83,
-                    "min_temp": 63.72,
-                    "conditions": "overcast clouds",
-                    "icon": "04d"
-                },
-                {
-                    "date": "Jun 21,  7:00 PM",
-                    "sunrise": "Jun 21, 11:32 AM",
-                    "sunset": "Jun 22,  2:31 AM",
-                    "max_temp": 88.84,
-                    "min_temp": 63.72,
-                    "conditions": "clear sky",
-                    "icon": "01d"
-                },
-                {
-                    "date": "Jun 22,  7:00 PM",
-                    "sunrise": "Jun 22, 11:32 AM",
-                    "sunset": "Jun 23,  2:31 AM",
-                    "max_temp": 77.86,
-                    "min_temp": 59.14,
-                    "conditions": "heavy intensity rain",
-                    "icon": "10d"
-                },
-                {
-                    "date": "Jun 23,  7:00 PM",
-                    "sunrise": "Jun 23, 11:32 AM",
-                    "sunset": "Jun 24,  2:31 AM",
-                    "max_temp": 89.01,
-                    "min_temp": 58.41,
-                    "conditions": "light rain",
-                    "icon": "10d"
-                },
-                {
-                    "date": "Jun 24,  7:00 PM",
-                    "sunrise": "Jun 24, 11:32 AM",
-                    "sunset": "Jun 25,  2:31 AM",
-                    "max_temp": 84.13,
-                    "min_temp": 58.66,
-                    "conditions": "clear sky",
-                    "icon": "01d"
-                }
-            ]
+                "hourly_weather": [
+                    {
+                        "time": "Jun 20,  7:00 PM",
+                        "temp": 83.14,
+                        "conditions": "overcast clouds",
+                        "icon": "04d"
+                    },
+                    {
+                        "time": "Jun 20,  8:00 PM",
+                        "temp": 83.75,
+                        "conditions": "overcast clouds",
+                        "icon": "04d"
+                    },
+                    {
+                        "time": "Jun 20,  9:00 PM",
+                        "temp": 84.79,
+                        "conditions": "broken clouds",
+                        "icon": "04d"
+                    },
+                    {
+                        "time": "Jun 20, 10:00 PM",
+                        "temp": 84.83,
+                        "conditions": "broken clouds",
+                        "icon": "04d"
+                    },
+                    {
+                        "time": "Jun 20, 11:00 PM",
+                        "temp": 84.33,
+                        "conditions": "broken clouds",
+                        "icon": "04d"
+                    },
+                    {
+                        "time": "Jun 21, 12:00 AM",
+                        "temp": 83.08,
+                        "conditions": "broken clouds",
+                        "icon": "04d"
+                    },
+                    {
+                        "time": "Jun 21,  1:00 AM",
+                        "temp": 81.14,
+                        "conditions": "clear sky",
+                        "icon": "01d"
+                    },
+                    {
+                        "time": "Jun 21,  2:00 AM",
+                        "temp": 77.95,
+                        "conditions": "clear sky",
+                        "icon": "01d"
+                    }
+                ],
+                "daily_weather": [
+                    {
+                        "date": "Jun 20,  7:00 PM",
+                        "sunrise": "Jun 20, 11:31 AM",
+                        "sunset": "Jun 21,  2:31 AM",
+                        "max_temp": 84.83,
+                        "min_temp": 63.72,
+                        "conditions": "overcast clouds",
+                        "icon": "04d"
+                    },
+                    {
+                        "date": "Jun 21,  7:00 PM",
+                        "sunrise": "Jun 21, 11:32 AM",
+                        "sunset": "Jun 22,  2:31 AM",
+                        "max_temp": 88.84,
+                        "min_temp": 63.72,
+                        "conditions": "clear sky",
+                        "icon": "01d"
+                    },
+                    {
+                        "date": "Jun 22,  7:00 PM",
+                        "sunrise": "Jun 22, 11:32 AM",
+                        "sunset": "Jun 23,  2:31 AM",
+                        "max_temp": 77.86,
+                        "min_temp": 59.14,
+                        "conditions": "heavy intensity rain",
+                        "icon": "10d"
+                    },
+                    {
+                        "date": "Jun 23,  7:00 PM",
+                        "sunrise": "Jun 23, 11:32 AM",
+                        "sunset": "Jun 24,  2:31 AM",
+                        "max_temp": 89.01,
+                        "min_temp": 58.41,
+                        "conditions": "light rain",
+                        "icon": "10d"
+                    },
+                    {
+                        "date": "Jun 24,  7:00 PM",
+                        "sunrise": "Jun 24, 11:32 AM",
+                        "sunset": "Jun 25,  2:31 AM",
+                        "max_temp": 84.13,
+                        "min_temp": 58.66,
+                        "conditions": "clear sky",
+                        "icon": "01d"
+                    }
+                ]
+            }
         }
     }
-}
   ```
 
 ### Register/create a user (also creates an API key that will be needed later)
