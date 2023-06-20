@@ -62,6 +62,10 @@ RSpec.configure do |config|
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
+
+
+
+  
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
 end
@@ -77,5 +81,6 @@ VCR.configure do |config|
  config.filter_sensitive_data('appid') { ENV['weather_api'] }
  config.filter_sensitive_data('key') { ENV['maps_api'] }
  config.filter_sensitive_data('Authorization') { "Bearer #{ENV['yelp_api']}" }
+ config.debug_logger = File.open('record.log', 'w')
 config.configure_rspec_metadata!
 end

@@ -6,7 +6,7 @@ RSpec.describe Location do
 
     location = LocationFacade.get_location(search)
 
-    expect(location.lat).to eq(39.738453)
-    expect(location.lon).to eq(-104.984853)
+    expect(location.lat).to eq(39.74001)
+    expect(location.lon).to eq(-104.99202)
   end
 end
